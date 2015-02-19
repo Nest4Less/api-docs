@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Nest4less-partner-api by Nest4LessDev</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Nest4less-partner-api</h1>
+        <p>Nest4Less Partner API</p>
+
+        <p class="view"><a href="https://github.com/Nest4LessDev/nest4less-partner-api">View the Project on GitHub <small>Nest4LessDev/nest4less-partner-api</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Nest4LessDev/nest4less-partner-api/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Nest4LessDev/nest4less-partner-api/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Nest4LessDev/nest4less-partner-api">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<ul>
+<li>This is a REST API based primarily on the JSON API standard (<a href="http://jsonapi.org/">http://jsonapi.org/</a>).</li>
+<li>Authorization is similar to the Client ID / Client Secret strategy of OAuth 2.</li>
+<li>All GET requests return collections. 
+
+<ul>
+<li>List operations also include a meta key which contains, at the least, pagination information.<br>
+</li>
+<li>Show operations typically include more information about the requested resource than their equivalent representation in a list operation.
+-Pagination is implemented using the page query string parameter.</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="authorization" class="anchor" href="#authorization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authorization</h2>
+
+<p>The Client ID and Client Secret can be passed to calls in one of three ways:</p>
+
+<ul>
+<li>Headers:
+
+<ul>
+<li>Using the X-CLIENT-ID and X-CLIENT-SECRET http headers</li>
+</ul>
+</li>
+<li>Query String Parameters:
+
+<ul>
+<li>Using the client_id and client_secret query string params</li>
+</ul>
+</li>
+<li>Post Payload
+
+<ul>
+<li>For POST/PUT operations, the payload can also contain the client_id and client_secret params</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="payload-formats" class="anchor" href="#payload-formats" aria-hidden="true"><span class="octicon octicon-link"></span></a>Payload Formats:</h2>
+
+<p>Payload bearing API requests should be sent as JSON payloads with headers set properly:</p>
+
+<pre><code>Content-Type: application/json
+Accept: application/json
+</code></pre>
+
+<h2>
+<a id="endpoints" class="anchor" href="#endpoints" aria-hidden="true"><span class="octicon octicon-link"></span></a>Endpoints:</h2>
+
+<h3>
+<a id="accounts" class="anchor" href="#accounts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accounts:</h3>
+
+<p><a href="https://nest4less.com/api/partner/v1/accounts">https://nest4less.com/api/partner/v1/accounts</a></p>
+
+<pre><code>GET      /api/partner/v1/accounts          List      (account_list.json)
+
+POST     /api/partner/v1/accounts          Create    (send account_create_update.json, returns account.json)
+
+GET      /api/partner/v1/accounts/&lt;id&gt;     Show      (account.json)
+
+PUT      /api/partner/v1/accounts/&lt;id&gt;     Update    (send account_create_update.json, returns account.json)
+</code></pre>
+
+<h2>
+<a id="listening-for-dom-events-emitted-by-the-iframe" class="anchor" href="#listening-for-dom-events-emitted-by-the-iframe" aria-hidden="true"><span class="octicon octicon-link"></span></a>Listening for DOM events emitted by the iFrame</h2>
+
+<p>The Nest4Less iFrame emits events that an integration partner can use to track their users' usage.  These events can be capture with code such as:</p>
+
+<pre><code>window.addEventListener("message", function(event){
+  if(event.message.vendorEvent){
+    console.log(event.message.vendorEvent);
+    console.log(event.message.url);
+    console.log(event.message.id);
+    console.log(event.message.title);
+  }
+}, false);
+</code></pre>
+
+<h2>
+<a id="iframe-embed-params" class="anchor" href="#iframe-embed-params" aria-hidden="true"><span class="octicon octicon-link"></span></a>iFrame embed params</h2>
+
+<p>When embedding the iFrame, there are a couple of options you can pass via query string.</p>
+
+<p>email: dictates where requested resources will be emailed to</p>
+
+<p>share_url: overrides the location where, when a user shares a resource, individuals clicking on that shared resource will be sent</p>
+
+<p>given an embed link:</p>
+
+<pre><code>http://nest4less.com/embed/partner2222
+</code></pre>
+
+<p>and params</p>
+
+<pre><code>{email: 'test@test.com', share_url: 'http://nest4less.com'}
+</code></pre>
+
+<p>these can be specified by instead embedding</p>
+
+<pre><code>http://nest4less.com/embed/partner2222?share_url=http%3A%2F%2Fnest4less.com&amp;email=test%40test.com
+</code></pre>
+
+
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Nest4LessDev">Nest4LessDev</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
