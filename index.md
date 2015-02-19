@@ -61,6 +61,7 @@ Show
 Update
 
     PUT      /api/partner/v1/accounts/<id>     (send account_create_update.json, returns account.json)
+
     curl 'http://nest4less.dev/api/partner/v1/accounts/87' -X PUT -H 'X-CLIENT-SECRET: <secret>'\
     -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'\
     --data-binary $'{"account": {"name": "Blah Personz","email": "test@test.test","company": "Blah Company"}}'
