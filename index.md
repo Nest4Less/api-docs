@@ -41,30 +41,30 @@ List
     GET      /api/partner/v1/accounts          (account_list.json)
 
     curl 'https://nest4less.com/api/partner/v1/accounts' -H 'X-CLIENT-SECRET: <secret>'\
-    -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'
+     -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'
 
 Create
 
     POST     /api/partner/v1/accounts          (send account_create_update.json, returns account.json)
 
     curl 'https://nest4less.com/api/partner/v1/accounts' -H 'X-CLIENT-SECRET: <secret>'\
-    -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'\
-    --data-binary $'{"account": {"name": "Blah Person","email": "test@test.test","company": "Blah Company","zip": "02703"}}'
+     -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'\
+     --data-binary $'{"account": {"name": "Blah Person","email": "test@test.test","company": "Blah Company","zip": "02703"}}'
 
 Show
 
     GET      /api/partner/v1/accounts/<id>     (account.json)
 
     curl 'https://nest4less.com/api/partner/v1/accounts<id>' -H 'X-CLIENT-SECRET: <secret>'\
-    -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'
+     -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'
 
 Update
 
     PUT      /api/partner/v1/accounts/<id>     (send account_create_update.json, returns account.json)
 
     curl 'http://nest4less.dev/api/partner/v1/accounts/87' -X PUT -H 'X-CLIENT-SECRET: <secret>'\
-    -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'\
-    --data-binary $'{"account": {"name": "Blah Personz","email": "test@test.test","company": "Blah Company"}}'
+     -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-CLIENT-ID: <clientid>'\
+     --data-binary $'{"account": {"name": "Blah Personz","email": "test@test.test","company": "Blah Company"}}'
 
 
 ## Listening for DOM events emitted by the iFrame
