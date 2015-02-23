@@ -20,7 +20,7 @@ The Client ID and Client Secret can be passed to calls in one of three ways:
 - Query String Parameters:
   - Using the client\_id and client\_secret query string params
 - Post Payload
-  - For POST/PUT operations, the payload can also contain the client_id and client_secret params
+  - For POST/PUT operations, the payload can also contain the client\_id and client\_secret params
 
 ## Payload Formats:
 
