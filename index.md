@@ -18,7 +18,7 @@ The Client ID and Client Secret can be passed to calls in one of three ways:
 - Headers:
   - Using the X-CLIENT-ID and X-CLIENT-SECRET http headers
 - Query String Parameters:
-  - Using the client_id and client_secret query string params
+  - Using the client\_id and client\_secret query string params
 - Post Payload
   - For POST/PUT operations, the payload can also contain the client_id and client_secret params
 
