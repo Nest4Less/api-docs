@@ -1,1 +1,6 @@
 markdown: redcarpet
+title: Nest4less-partner-api
+description: Nest4Less Partner API
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
