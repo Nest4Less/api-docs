@@ -96,9 +96,9 @@ Root: https://rev-insite.com/
     {
       "account": {
         "name": “John Doe",
-	"email": "test@test.test",
-	"company": "Company",
-	"zip": "02203"
+        "email": "test@test.test",
+        "company": "Company",
+        "zip": "02203"
       }
     }
     ```
