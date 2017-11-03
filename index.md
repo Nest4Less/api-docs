@@ -52,7 +52,7 @@ Root: https://rev-insite.com/
 
 * Create
 
-  `POST /provider_directories/:provider_directory_id/new_vendor_invitations`
+  `POST /api/v1/invitations`
 
   Payload:
 
@@ -60,13 +60,14 @@ Root: https://rev-insite.com/
   {
     "invitation": {
       "email": string,
-      "vendor_id": integer, // optional, email takes precedence if present
+      "vendor_id": integer, // optional, may only be specified for existing vendors, although email takes precedence if present
       "name": string,
       "company": string,
 
+      "category": string, // must only be specified for new vendors
+
       // optional
       "phone": string,
-      "category": string,
       "business_type": string
     }
   }
