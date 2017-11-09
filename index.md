@@ -1,11 +1,3 @@
-## Partner Workflow
-
-1. We create all the necessary data for the partner (`Company` account, `RealEstateCompany` and `PremierPartner` records with credentials).
-2. We pass credentials to the partner via a secure channel.
-3. Partner mamipulates `Realtor` accounts using the Partner API.
-4. Partner manipulates `Invitation`s using the User API below.
-5. Partner requests aggregate stats (revenue, impressions, etc) using both APIs.
-
 ## Overview
 
 - This is a REST API based primarily on the JSON API standard (http://jsonapi.org/).
@@ -14,6 +6,14 @@
   - List operations also include a meta key which contains, at the least, pagination information.
   - Show operations typically include more information about the requested resource than their equivalent representation in a list operation.
 - Pagination is implemented using the `page` query string parameter.
+
+## Partner Workflow
+
+1. We create all the necessary data for the partner (`Company` account, `RealEstateCompany` and `PremierPartner` records with credentials).
+2. We pass credentials to the partner via a secure channel.
+3. Partner mamipulates `Realtor` accounts using the Partner API.
+4. Partner manipulates `Invitation`s using the User API below.
+5. Partner requests aggregate stats (revenue, impressions, etc) using both APIs.
 
 ## Authorization
 
