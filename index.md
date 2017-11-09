@@ -31,8 +31,10 @@ Use `X-AUTH-Token` HTTP header.
 
 Payload bearing API requests should be sent as JSON payloads with headers set properly:
 
-   Content-Type: application/json
-   Accept: application/json
+```
+Content-Type: application/json
+Accept: application/json
+```
 
 ## Endpoints
 
