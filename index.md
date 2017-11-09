@@ -1,6 +1,6 @@
 ## Overview
 
-- This is a REST API based primarily on the JSON API standard (http://jsonapi.org/).
+- This is a REST API based primarily on the JSON API standard (<http://jsonapi.org/>).
 - Authorization is similar to the Client ID / Client Secret strategy of OAuth 2.
 - All GET requests return collections.
   - List operations also include a meta key which contains, at the least, pagination information.
