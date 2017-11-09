@@ -1,10 +1,18 @@
+## Partner Workflow
+
+1. We create all the necessary data for the partner (`Company` account, `RealEstateCompany` and `PremierPartner` records with credentials).
+2. We pass credentials to the partner via a secure channel.
+3. Partner mamipulates `Realtor` accounts using the Partner API.
+4. Partner manipulates `Invitation`s using the User API below.
+5. Partner requests aggregate stats (revenue, impressions, etc) using both APIs.
+
 ## Overview
 
 - This is a REST API based primarily on the JSON API standard (http://jsonapi.org/).
 - Authorization is similar to the Client ID / Client Secret strategy of OAuth 2.
 - All GET requests return collections.
-	- List operations also include a meta key which contains, at the least, pagination information.
-	- Show operations typically include more information about the requested resource than their equivalent representation in a list operation.
+  - List operations also include a meta key which contains, at the least, pagination information.
+  - Show operations typically include more information about the requested resource than their equivalent representation in a list operation.
 - Pagination is implemented using the `page` query string parameter.
 
 ## Authorization
@@ -60,11 +68,11 @@ Root: https://rev-insite.com/
   {
     "invitation": {
       "email": string,
-      "vendor_id": integer, // optional, may only be specified for existing vendors, although email takes precedence if present
+      "vendor_id": integer, // optional, should only be specified for existing vendors, although email takes precedence if present
       "name": string,
       "company": string,
 
-      "category": string, // must only be specified for new vendors
+      "category": string, // should only be specified for new vendors
 
       // optional
       "phone": string,
@@ -83,6 +91,8 @@ Root: https://rev-insite.com/
 
 ### Partner
 
+#### Accounts
+
 * List
 
   `GET /api/partner/v1/accounts`
@@ -96,10 +106,10 @@ Root: https://rev-insite.com/
   ```
   {
     "account": {
-      "name": “John Doe",
-        "email": "test@test.test",
-        "company": "Company",
-        "zip": "02203"
+      "name": string,
+      "email": string,
+      "company": string,
+      "zip": string
     }
   }
   ```
