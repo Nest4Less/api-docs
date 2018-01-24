@@ -78,7 +78,8 @@ Root: https://rev-insite.com/
 
       // optional
       "phone": string,
-      "business_type": string
+      "business_type": string,
+      "message": string
     }
   }
   ```
