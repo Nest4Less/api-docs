@@ -112,6 +112,7 @@ Root: https://rev-insite.com/
       "name": string,
       "email": string,
       "company": string,
+      "address": string,
       "zip": string
     }
   }
